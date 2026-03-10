@@ -1,0 +1,37 @@
+basePath: /
+definitions:
+  base.ApiResponse:
+    properties:
+      code:
+        type: integer
+      data: {}
+      message:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: CloudOps — K8s多集群管理与AI智能运维平台
+  title: CloudOps API
+  version: "1.0"
+paths:
+  /api/k8s/clusters:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/base.ApiResponse'
+      summary: 获取集群列表
+      tags:
+      - K8s集群管理
+securityDefinitions:
+  BearerAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "go build",
+      "type": "shell",
+      "command": "go build -v ./...",
+      "group": "build",
+      "presentation": { "reveal": "silent" },
+      "problemMatcher": "$go"
+    },
+    {
+      "label": "go test",
+      "type": "shell",
+      "command": "go test -v ./...",
+      "group": "test"
+    },
+    {
+      "label": "go vet",
+      "type": "shell",
+      "command": "go vet ./...",
+      "group": "build"
+    },
+    {
+      "label": "swag init",
+      "type": "shell",
+      "command": "swag init -g main.go --output docs",
+      "group": "build"
+    }
+  ]
+}

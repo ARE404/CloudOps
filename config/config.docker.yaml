@@ -3,19 +3,19 @@ server:
 
 log:
   dir: "./logs"
-  level: "debug"
+  level: "info"
 
 jwt:
   key1: "cloudops-secret-key-1-change-in-prod"
   key2: "cloudops-secret-key-2-change-in-prod"
   issuer: "cloudops"
-  expiration: 1440  # minutes (24h)
+  expiration: 1440
 
 mysql:
-  addr: "root:root@tcp(localhost:3307)/cloudops?charset=utf8mb4&parseTime=True&loc=Local"
+  addr: "root:root@tcp(mysql:3306)/cloudops?charset=utf8mb4&parseTime=True&loc=Local"
 
 redis:
-  addr: "localhost:6380"
+  addr: "redis:6379"
   password: ""
 
 casbin:
